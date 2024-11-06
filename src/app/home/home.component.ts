@@ -10,6 +10,8 @@ export class HomeComponent {
   productsData!: any;
 
   constructor(public service: HttpService){
-    this.service.getAllProducts()
+    this.service.getAllProducts().subscribe((data: any) => {
+      this.productsData = data.products;
+    })
   }
 }

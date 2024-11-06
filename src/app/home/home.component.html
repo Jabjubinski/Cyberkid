@@ -18,26 +18,31 @@
   </div>
 </section>
 <section class="best-sellers">
+  <div class="title">
+    <h1 class="best-sellers-title">BEST SELLERS</h1>
+    <button class="best-sellers-btn">View All</button>
+  </div>
   <swiper-container
     class="mySwiper"
     pagination="false"
     space-between="30"
-    slides-per-view="3"
-    loop="true"
+    slides-per-view="4"
     navigation="true"
     keyboard="true"
     speed="1000"
-    
   >
-    <swiper-slide><img src="/assets/Cybercopy.webp" alt="" /></swiper-slide>
-    <swiper-slide><img src="/assets/Cybercopy.webp" alt="" /></swiper-slide>
-    <swiper-slide><img src="/assets/Cybercopy.webp" alt="" /></swiper-slide>
-    <swiper-slide><img src="/assets/Cybercopy.webp" alt="" /></swiper-slide>
-    <swiper-slide><img src="/assets/Cybercopy.webp" alt="" /></swiper-slide>
-    <swiper-slide><img src="/assets/Cybercopy.webp" alt="" /></swiper-slide>
-    <swiper-slide><img src="/assets/Cybercopy.webp" alt="" /></swiper-slide>
-    <swiper-slide><img src="/assets/Cybercopy.webp" alt="" /></swiper-slide>
-    <swiper-slide><img src="/assets/Cybercopy.webp" alt="" /></swiper-slide>
+    <swiper-slide *ngFor="let product of productsData">
+      <div class="product-image-container">
+        <img class="slide-image" src="{{ product.thumbnail }}" alt="" />
+        <div *ngIf="product.price.current == product.price.beforeDiscount"><button class="sale">SALE</button></div>
+      </div>
+      <div class="description">
+        <p>
+          {{ product.title }} <br />
+          {{ product.price.current }} {{ product.price.currency }}
+        </p>
+      </div>
+      <button class="add-to-cart">Add to Cart</button>
+    </swiper-slide>
   </swiper-container>
 </section>
-
