@@ -1,0 +1,29 @@
+<header>
+  <nav>
+    <div class="logo">
+      <h1>Q ARCADE</h1>
+    </div>
+    <ul>
+      <div class="products">
+        <li (mouseenter)="mouseOver()"><a routerLink="#">Products</a></li>
+        <div
+          class="products-list"
+          *ngIf="isMouseOver"
+          (mouseleave)="mouseLeave()"
+        >
+          <ul class="products-list-ul">
+            <li><a routerLink="#">Best Sellers</a></li>
+            <li><a routerLink="#">Games</a></li>
+            <li><a routerLink="#">Consoles</a></li>
+            <li><a routerLink="#">Controllers</a></li>
+            <li><a routerLink="#">Accesories</a></li>
+          </ul>
+        </div>
+      </div>
+      <li><a routerLink="#">On Sale</a></li>
+      <li><a routerLink="#">Contact Us</a></li>
+      <li><a routerLink="#">Log In</a></li>
+      <div class="cart">🛒</div>
+    </ul>
+  </nav>
+</header>
