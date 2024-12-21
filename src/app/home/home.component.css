@@ -23,8 +23,8 @@
   gap: 1em;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
-    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
   margin-bottom: 10em;
   padding-left: 4em;
   padding-right: 6em;
@@ -64,7 +64,7 @@
 }
 .black {
   width: 100%;
-  background-color: black;
+  background-color: var(--black);
   padding: 60px;
   margin: 0;
 }
@@ -73,19 +73,21 @@
   right: 10%;
   top: 70px;
   border-radius: 25px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: var(--shadow);
 }
 .cyberpunk-guy img {
   border-radius: 25px;
 }
 .best-sellers {
-  background-color: black;
+  background-color: var(--black);
   padding-top: 50px;
+  position: relative;
+  padding-bottom: 50px;
 }
 .mySwiper {
-  --swiper-navigation-sides-offset: 10px;
-  --swiper-navigation-size: 20px !important;
-  --swiper-theme-color: white;
+  --swiper-navigation-sides-offset: 20px;
+  --swiper-navigation-size: 30px !important;
+  --swiper-theme-color: black !important;
 }
 
 swiper-slide {
@@ -120,7 +122,6 @@ swiper-slide img {
 swiper-container {
   width: 90%;
   margin-inline: auto;
-  padding-bottom: 2em;
 }
 .title {
   display: flex;
@@ -129,6 +130,7 @@ swiper-container {
   width: 90%;
   margin-inline: auto;
   margin-bottom: 3em;
+  color: white;
 }
 .best-sellers-btn {
   width: 10%;
@@ -162,7 +164,7 @@ swiper-container {
   background-color: var(--purple);
   color: white;
 }
-.sale{
+.sale {
   color: white;
   background-color: var(--purple);
   position: absolute;
@@ -171,6 +173,217 @@ swiper-container {
   border-radius: 25px;
   width: 15%;
   text-align: center;
-  cursor:auto;
+  cursor: auto;
   border: none;
+}
+.shop-by-category {
+  background-color: rgb(35, 34, 35);
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+}
+.categories-container {
+  width: 90%;
+  margin-inline: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.category {
+  border-radius: 25px;
+  width: 33.3%;
+  overflow: hidden;
+  position: relative;
+}
+.category > img {
+  border-radius: 25px;
+  width: 100%;
+  height: 100%;
+  transition: 0.5s;
+  object-fit: cover;
+}
+.category:hover img {
+  transform: scale(1.05);
+}
+.color-overlay {
+  background: rgb(136, 88, 237);
+  background: linear-gradient(
+    0deg,
+    rgba(136, 88, 237, 0.7371323529411764) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: 0.5s;
+  pointer-events: none;
+}
+.category:hover .color-overlay {
+  opacity: 1;
+}
+
+/* this weeks deals */
+.this-weeks-deals {
+  padding: 10rem 5rem 10rem 5rem;
+  background-color: var(--black);
+}
+.deals-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.ten-percent-text-container {
+  background-color: var(--purple);
+  border-radius: 25px;
+  padding: 2rem;
+  color: white;
+  text-align: center;
+  box-shadow: var(--shadow);
+  z-index: 1;
+}
+.ten-percent {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100%;
+  width: 75%;
+}
+.kira,
+.chronoSplit,
+.deadAtLast {
+  border-radius: 25px;
+  position: relative;
+}
+.chronoSplit {
+  top: 5rem;
+  right: 2rem;
+}
+.deadAtLast {
+  top: 2.5rem;
+  right: 5rem;
+}
+.category-names {
+  display: flex;
+  flex-direction: row;
+  color: white;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+.category-names-item {
+  width: 33.3%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+}
+.spend-and-save {
+  background-image: url(/assets/scalingbg.webp);
+  background-position: 100% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.spend-and-save-banner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 10rem;
+  color: white;
+  gap: 2rem;
+}
+.newsLetter {
+  background-image: url(/assets/newsbg.webp);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px);
+  flex-direction: column;
+  position: relative;
+}
+.newsLetter-box {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 5rem;
+  margin-bottom: 10rem;
+}
+.submit {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+#email {
+  border-radius: 25px;
+  border: 1px solid white;
+  padding: 1rem;
+  width: 50%;
+  height: 25%;
+  background: none;
+  color: white;
+}
+form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+.newsletter-half {
+  background-color: var(--purple);
+  padding: 6rem;
+  width: 100%;
+}
+.gamesstack {
+  position: absolute;
+  bottom: 0;
+}
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: black;
+  color: white;
+  padding: 5rem;
+}
+.footer-products,
+.footer-policy,
+.footer-store {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+.footer-item-link {
+  color: white;
+}
+.footer-store{
+  text-align: left;
+}
+.footer-item-list{
+  padding: 0;
+  margin: 0;
 }

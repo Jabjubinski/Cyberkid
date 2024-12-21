@@ -34,7 +34,9 @@
     <swiper-slide *ngFor="let product of productsData">
       <div class="product-image-container">
         <img class="slide-image" src="{{ product.thumbnail }}" alt="" />
-        <div *ngIf="product.price.current == product.price.beforeDiscount"><button class="sale">SALE</button></div>
+        <div *ngIf="product.price.current == product.price.beforeDiscount">
+          <button class="sale">SALE</button>
+        </div>
       </div>
       <div class="description">
         <p>
@@ -46,3 +48,118 @@
     </swiper-slide>
   </swiper-container>
 </section>
+<section class="shop-by-category">
+  <div class="title">
+    <h1>SHOP BY CATEGORY</h1>
+  </div>
+  <div class="categories-container">
+    <div class="category">
+      <img src="assets/console.webp" alt="" />
+      <div class="color-overlay"></div>
+    </div>
+    <div class="category">
+      <img src="assets/headphones.webp" alt="" />
+      <div class="color-overlay"></div>
+    </div>
+    <div class="category">
+      <img src="assets/controller.webp" alt="" />
+      <div class="color-overlay"></div>
+    </div>
+  </div>
+  <div class="category-names">
+    <div class="category-names-item">
+      <p>Console</p>
+    </div>
+    <div class="category-names-item">
+      <p>Accesories</p>
+    </div>
+    <div class="category-names-item">
+      <p>Controllers</p>
+    </div>
+  </div>
+</section>
+<section class="this-weeks-deals">
+  <div class="deals-container">
+    <div class="ten-percent">
+      <div class="ten-percent-text-container">
+        <h1 style="font-size: 22px">Hello world</h1>
+        <h2 style="font-size: 140px">10% off</h2>
+        <h3 style="font-size: 42px">On <b>ALL</b> Games</h3>
+      </div>
+    </div>
+    <div class="images">
+      <img class="kira" src="assets/Kira.webp" alt="" />
+      <img class="chronoSplit" src="assets/Chronosplit.webp" alt="" />
+      <img class="deadAtLast" src="assets/DeadatLast.webp" alt="" />
+    </div>
+  </div>
+</section>
+<section class="spend-and-save">
+  <div class="spend-and-save-banner">
+    <h1 style="font-size: 4rem">SPEND AND SAVE</h1>
+    <h3 style="font-size: 1.5rem">Save 20% when you spend over $125</h3>
+    <button class="buy-now-btn" style="width: 10%">Shop Now</button>
+  </div>
+</section>
+<section class="newsLetter">
+  <div class="newsLetter-box">
+    <h1 style="color: white">NEWSLETTER</h1>
+    <p style="color: white; text-align: center">
+      Sign up to receive updates on new products <br />
+      and special offers
+    </p>
+    <form action="">
+      <label for="email" style="color: white">Email*</label>
+      <input id="email" type="text" required />
+      <div class="submit">
+        <input type="checkbox" />
+        <p style="color: white">I agree to receive emails from Q Arcade</p>
+        <input
+          type="submit"
+          value="Submit"
+          class="buy-now-btn"
+          style="width: 15%"
+        />
+      </div>
+    </form>
+  </div>
+  <img class="gamesstack" src="assets/gamesstack.webp" alt="" />
+  <div class="newsletter-half"></div>
+</section>
+<footer>
+  <div class="footer-logo">
+    <h3>Q ARCADE</h3>
+  </div>
+  <div class="footer-products">
+    <h5>products</h5>
+    <ul class="footer-item-list">
+      <li><a class="footer-item-link" routerLink="/products">Games</a></li>
+      <li><a class="footer-item-link" href="">Consoles</a></li>
+      <li><a class="footer-item-link" href="">Controllers</a></li>
+      <li><a class="footer-item-link" href="">Accesories</a></li>
+    </ul>
+  </div>
+  <div class="footer-store">
+    <h5>Store</h5>
+    <ul class="footer-item-list">
+      <li>
+        Main Street 65 <br />
+        12345 New York
+      </li>
+      <li>Mon-Fri:9am - 9pm</li>
+      <li>info&#64;mysite.com</li>
+      <li>123-456-7890</li>
+    </ul>
+  </div>
+  <div class="footer-policy">
+    <h5>Policy</h5>
+    <ul class="footer-item-list">
+      <li><a class="footer-item-link" href="">Terms & Conditions</a></li>
+      <li><a class="footer-item-link" href="">Shipping</a></li>
+      <li><a class="footer-item-link" href="">Refund Policy</a></li>
+      <li><a class="footer-item-link" href="">Privacy Policy</a></li>
+      <li><a class="footer-item-link" href="">Cookie Policy</a></li>
+      <li><a class="footer-item-link" href="">FAQ</a></li>
+    </ul>
+  </div>
+</footer>

@@ -7,13 +7,19 @@ import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { register } from 'swiper/element/bundle';
+import { ProductsComponent } from './products/products.component';
+import { ErrorComponent } from './error/error.component';
+import { Router } from 'express';
+import { RouterModule } from '@angular/router';
 register()
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    HeaderComponent
+    HeaderComponent,
+    ProductsComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
